@@ -27,11 +27,11 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t pspregistry1272.azurecr.io/my-python-app:${{ github.sha }} .
+        docker build -t pspregistry1272.azurecr.io/my-python-app:latest .
 
     - name: Push Docker image
       run: |
-        docker push pspregistry1272.azurecr.io/my-python-app:${{ github.sha }}
+        docker push pspregistry1272.azurecr.io/my-python-app:latest
 
     - name: Deploy to AKS
       run: kubectl apply -f deployment.yml -f service.yml
