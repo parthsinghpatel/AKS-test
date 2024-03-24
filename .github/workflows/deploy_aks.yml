@@ -25,6 +25,11 @@ jobs:
         cluster-name: psp-aks-test
         resource-group: psp-test  
 
+    - name: Login to Azure Container Registry
+      run: echo "${{ secrets.ACR_PASSWORD }}" | docker login pspregistry1272.azurecr.io -u pspregistry1272 --password-stdin
+      env:
+        ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+    
     - name: Build Docker image
       run: |
         docker build -t pspregistry1272.azurecr.io/my-python-app:latest .
