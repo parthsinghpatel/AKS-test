@@ -19,3 +19,5 @@ spec:
         image: pspregistry1272.azurecr.io/my-python-app:latest
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+      - name: acr-secret
