@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t pspregistry1272.azurecr.io/my-python-app:${{ github.sha }}
+        docker build -t pspregistry1272.azurecr.io/my-python-app:${{ github.sha }} .
 
     - name: Push Docker image
       run: |
